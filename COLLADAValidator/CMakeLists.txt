@@ -31,16 +31,16 @@ set(libValidator_libs
 	debug MathMLSolverd
 )
 if (LIBXML2_FOUND)
-    set(libValidator_libs "${libValidator_libs}  debug ${LIBXML2_LIBRARIES}")
+    list(APPEND libValidator_libs debug ${LIBXML2_LIBRARIES})
 else()
-    set(libValidator_libs "${libValidator_libs}  debug ${LIBXML2_LIBRARIES}d")
+    list(APPEND libValidator_libs debug ${LIBXML2_LIBRARIES}d)
 endif()
 if (PCRE_FOUND)
-    set(libValidator_libs "${libValidator_libs}  debug ${PCRE_LIBRARIES}")
+    list(APPEND libValidator_libs debug ${PCRE_LIBRARIES})
 else()
-    set(libValidator_libs "${libValidator_libs}  debug ${PCRE_LIBRARIES}d")
+    list(APPEND libValidator_libs debug ${PCRE_LIBRARIES}d")
 endif()
- set(libValidator_libs "${libValidator_libs}  debug UTFd")
+ list(APPEND libValidator_libs debug UTFd)
 
 include_directories(
 	${libValidator_include_dirs}
