@@ -38,7 +38,7 @@ endif()
 if (PCRE_FOUND)
     list(APPEND libValidator_libs debug ${PCRE_LIBRARIES})
 else()
-    list(APPEND libValidator_libs debug ${PCRE_LIBRARIES}d")
+    list(APPEND libValidator_libs debug ${PCRE_LIBRARIES}d)
 endif()
  list(APPEND libValidator_libs debug UTFd)
 
