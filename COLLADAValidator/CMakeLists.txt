@@ -16,14 +16,22 @@ set(SRC
 )
 
 set(libValidator_libs
-	OpenCOLLADASaxFrameworkLoader
-	GeneratedSaxParser
-	OpenCOLLADAFramework
-	OpenCOLLADABaseUtils
-	MathMLSolver
-	${PCRE_LIBRARIES}
-	${LIBXML2_LIBRARIES}
-	UTF
+	optimized OpenCOLLADASaxFrameworkLoader
+	optimized GeneratedSaxParser
+	optimized OpenCOLLADAFramework
+	optimized OpenCOLLADABaseUtils
+	optimized MathMLSolver
+	optimized ${PCRE_LIBRARIES}
+	optimized ${LIBXML2_LIBRARIES}
+	optimized UTF
+	debug OpenCOLLADASaxFrameworkLoaderd
+	debug GeneratedSaxParserd
+	debug OpenCOLLADAFrameworkd
+	debug OpenCOLLADABaseUtilsd
+	debug MathMLSolverd
+	debug ${PCRE_LIBRARIES}d
+	debug ${LIBXML2_LIBRARIES}d
+	debug UTFd
 )
 
 include_directories(
