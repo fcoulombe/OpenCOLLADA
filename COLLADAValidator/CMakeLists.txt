@@ -29,10 +29,18 @@ set(libValidator_libs
 	debug OpenCOLLADAFrameworkd
 	debug OpenCOLLADABaseUtilsd
 	debug MathMLSolverd
-	debug ${PCRE_LIBRARIES}d
-	debug ${LIBXML2_LIBRARIES}d
-	debug UTFd
 )
+if (LIBXML2_FOUND)
+    set(libValidator_libs "${libValidator_libs}  debug ${LIBXML2_LIBRARIES}")
+else()
+    set(libValidator_libs "${libValidator_libs}  debug ${LIBXML2_LIBRARIES}d")
+endif()
+if (PCRE_FOUND)
+    set(libValidator_libs "${libValidator_libs}  debug ${PCRE_LIBRARIES}")
+else()
+    set(libValidator_libs "${libValidator_libs}  debug ${PCRE_LIBRARIES}d")
+endif()
+ set(libValidator_libs "${libValidator_libs}  debug UTFd")
 
 include_directories(
 	${libValidator_include_dirs}
