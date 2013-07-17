@@ -56,7 +56,10 @@ macro(opencollada_add_lib
 
 	if (USE_STATIC)
 		add_library(${name}_static STATIC ${sources})
-		set_target_properties(${name}_static PROPERTIES OUTPUT_NAME ${name})
+		set_target_properties(${name}_static 
+		PROPERTIES 
+	    DEBUG_OUTPUT_NAME ${name}d
+        RELEASE_OUTPUT_NAME ${name})
 		foreach(target_lib ${target_libs})
 			if(TARGET ${target_lib}_static)
 				target_link_libraries(${name}_static ${target_lib}_static)
